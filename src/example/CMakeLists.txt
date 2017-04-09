@@ -28,4 +28,4 @@ set(${TARGET_NAME}_SRC_FILES
 add_executable(${TARGET_NAME} ${${TARGET_NAME}_SRC_FILES})
 
 # °²×°
-install(TARGETS 			${TARGET_NAME} 		DESTINATION ${INSTALL_DIR})
+install(TARGETS             ${TARGET_NAME}              DESTINATION ${INSTALL_DIR})

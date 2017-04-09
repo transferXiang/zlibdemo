@@ -7,7 +7,7 @@
  *
  * \brief 
  *
- * TODO: long description
+ * 在zlib的基础上进行包装实现
  *
  * \note
 */

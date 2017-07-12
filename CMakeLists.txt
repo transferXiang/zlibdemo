@@ -1,20 +1,24 @@
-# ÏîÄ¿Ãû³Æ
+# é¡¹ç›®åç§°
 project (ZlibDemo)
 
-# ¼ì²éCmake°æ±¾
+# æ£€æŸ¥Cmakeç‰ˆæœ¬
 cmake_minimum_required (VERSION 2.6)
 
-# ÉèÖÃµ±Ç°ÏîÄ¿Ä¿Â¼
+# è®¾ç½®å½“å‰é¡¹ç›®ç›®å½•
 set(SRC_DIR ${PROJECT_SOURCE_DIR}/src)
 
-# ÉèÖÃ°²×°Ä¿Â¼
+# è®¾ç½®å®‰è£…ç›®å½•
 set(INSTALL_DIR ${PROJECT_SOURCE_DIR}/install)
 
-# ÉèÖÃÍ·ÎÄ¼şÄ¿Â¼
+# è®¾ç½®å¤´æ–‡ä»¶ç›®å½•
 set(INCLUDE_DIR ${PROJECT_SOURCE_DIR}/3rdparty/include)
 
-# ÉèÖÃ¿âÄ¿Â¼
-set(LIB_DIR ${PROJECT_SOURCE_DIR}/3rdparty/lib)
+# è®¾ç½®åº“ç›®å½•
+if(WIN32)
+    set(LIB_DIR ${PROJECT_SOURCE_DIR}/3rdparty/lib/win32)
+else(WIN32)
+    set(LIB_DIR ${PROJECT_SOURCE_DIR}/3rdparty/lib/linux)
+endif(WIN32)
 
-# Ìí¼Ó×ÓÄ¿Â¼
+# æ·»åŠ å­ç›®å½•
 add_subdirectory(src)

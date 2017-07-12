@@ -5,7 +5,7 @@
  * \author transfer
  * Contact: 448217518@qq.com
  *
- * \brief 
+ * \brief
  *
  * TODO: long description
  *
@@ -36,7 +36,7 @@ static bool CompareBuffer(const char* buffer1, int len1, const char* buffer2, in
 }
 
 
-void main()
+int main()
 {
 	const char* filePath = "test.txt.zip";
 	int bufferWriteLen = rand();
@@ -45,11 +45,13 @@ void main()
 	{
 		bufferWrite[i] = rand() * 1.0 / RAND_MAX * 128;
 	}
+	printf("%s\n", bufferWrite);
 	writeZipFile(filePath, bufferWrite, bufferWriteLen);
 
 	char* bufferRead = NULL;
 	int bufferReadLen = 0;
 	readZipFile(filePath, &bufferRead, bufferReadLen);
+	printf("%s\n", bufferRead);
 
 	if (!CompareBuffer(bufferWrite, bufferWriteLen, bufferRead, bufferReadLen))
 	{
@@ -58,4 +60,6 @@ void main()
 
 	delete[] bufferWrite;
 	delete[] bufferRead;
+
+	return 0;
 }
